@@ -7,7 +7,7 @@ while(seleccion != "si" && seleccion != "no"){
 
 if (seleccion == "si"){
     alert("Redireccionando al catalogo de productos");
-    let catalogo = Number(prompt( "0). Salir 1).buzo $3000 2).remera $1500 3).jean $5000 4).Zapatillas $6000 "))
+    let catalogo = Number(prompt( "0). Salir 1).harina $300 2).coca-cola $650 3).cerveza (pack) $2500 4).tabaco $5500 "))
     let unidades;
     let total = 0;
     
@@ -20,26 +20,26 @@ if (seleccion == "si"){
     while (catalogo != 0) {
       switch (catalogo) {
         case 1:
-            unidades= Number(prompt("el producto seleccionado es buzo, indique la cantidad"))
-            total += cantidad(unidades, 3000)
+            unidades= Number(prompt("el producto seleccionado es harina, indique la cantidad"))
+            total += cantidad(unidades, 300)
             break;
         case 2:
-            unidades = Number(prompt("el producto seleccionado es remera, indique la cantidad"))
-            total += cantidad(unidades, 1500)
+            unidades = Number(prompt("el producto seleccionado es coca-cola, indique la cantidad"))
+            total += cantidad(unidades, 650)
             break;
         case 3:
-            unidades = Number(prompt("el producto seleccionado es jean, indique la cantidad"))
-            total += cantidad(unidades, 5000)
+            unidades = Number(prompt("el producto seleccionado es cerveza (pack), indique la cantidad"))
+            total += cantidad(unidades, 2500)
             break;
         case 4:
             unidades = Number(prompt("el producto seleccionado es Zapatillas, indique la cantidad"))
-            total += cantidad(unidades, 6000)
+            total += cantidad(unidades, 5500)
             break;
         default:
             break;
     
       }
-        catalogo = Number(prompt( "0). Salir 1).buzo $3000 2).remera $1500 3).jean $5000 4).Zapatillas $6000"))
+        catalogo = Number(prompt( "0). Salir 1).harina $300 2).coca-cola $650 3).cerveza (pack) $2500 4).tabaco $5500 "))
     }
     
     alert("el total de la compra es de: " + total)
