@@ -20,19 +20,19 @@ if (seleccion == "si"){
     while (catalogo != 0) {
       switch (catalogo) {
         case 1:
-            unidades= Number(prompt("el producto seleccionado es Harina, indique la cantidad"))
+            unidades= Number(prompt("Su producto seleccionado es Harina, indique la cantidad: "))
             total += cantidad(unidades, 300)
             break;
         case 2:
-            unidades = Number(prompt("el producto seleccionado es Coca-Cola, indique la cantidad"))
+            unidades = Number(prompt("SU producto seleccionado es Coca-Cola, indique la cantidad: "))
             total += cantidad(unidades, 650)
             break;
         case 3:
-            unidades = Number(prompt("el producto seleccionado es Cerveza (pack), indique la cantidad"))
+            unidades = Number(prompt("Su producto seleccionado es Cerveza (pack), indique la cantidad: "))
             total += cantidad(unidades, 2500)
             break;
         case 4:
-            unidades = Number(prompt("el producto seleccionado es Tabaco, indique la cantidad"))
+            unidades = Number(prompt("Su producto seleccionado es Tabaco, indique la cantidad: "))
             total += cantidad(unidades, 5500)
             break;
         default:
@@ -45,32 +45,30 @@ if (seleccion == "si"){
     alert("el total de la compra es de: " + total)
     console.log(total);
 
+    const envio = () => {
+      if (total > 5000 ) {
+        alert("Al ser tu compra mayor a $5.000. el envio es gratuito ")
+      }else {
+        alert("tu compra es inferior a $5.000. por lo tanto se te cobrara un recargo de $500 en la entrega ")
+      }
+  }
     const metodo_pago = () => {
-    let Pago_TC_TD = prompt("Ingrese el metodo de pago, Tarjeta de Credito(se le sumara un interes del 21) o Tarjeta de Debito(se le hara un descuento de 1000$).Recuerde " )
+    let Pago_TC_TD = prompt("Ingrese el metodo de pago, Tarjeta de Credito(se le sumara un interes del 21%(TC) o Tarjeta de Debito(se le hara un descuento de 100$(TD))" )
     if (Pago_TC_TD == "Tarjeta de Credito"||Pago_TC_TD == "TC") {
       total;
-      let iva= total + (total *= 0.21)
-      alert("el 21% del total de la compra es de: " + total);
-      alert("el total de la compra con 21%: " + iva);
-      console.log(total);
+      let tc_iva= total + (total *= 0.21)
+      alert("El 21% del total de la compra es de: " + total);
+      alert("El total de la compra con 21% incluido es: " + tc_iva);
     }else if ( Pago_TC_TD == "Tarjeta de Debito"||Pago_TC_TD == "TD") {
-      total -= 1000
-      alert("tenes un descuento de 1000, el total es:" + total)
+      total -= 100
+      alert("Tenes un descuento de $100, el total es: " + total)
       alert("el total de la compra es de: " + total)
     }
   }
 
-
-    const envio = () => {
-        if (total >= 10000) {
-          alert("El envio es gratuito")
-        }else{
-          total += 1000
-          alert("el costo de envio es de 1000, el total es: " + total)
-        }
-    }
-metodo_pago()
 envio()
+metodo_pago()
+
 
 }else seleccion == "no"
     alert("Gracias por su visita")
