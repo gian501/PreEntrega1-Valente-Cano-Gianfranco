@@ -9,11 +9,10 @@ const cantidad = (cant, precio) => {
   return cant * precio
 }
 if (seleccion == "si"){
-    alert("Redireccionando al catalogo de productos");
-    let catalogo = Number(prompt( "0). Salir 1).harina $300 2).coca-cola $650 3).cerveza (pack) $2500 4).tabaco $5500 "))
+    alert("Redireccionando al catalogo de productos. Seleccione una opcion (solo en Números)");
+    let catalogo = Number(prompt( "0). Salir 1).Harina $300 2).Coca-cola 2.25L $650 3).Cerveza (pack) $2500 4).Tabaco $5500 "))
     let unidades;
     let total = 0;
-    
     
     
     
@@ -39,21 +38,25 @@ if (seleccion == "si"){
             break;
     
       }
-        catalogo = Number(prompt( "0). Salir 1).harina $300 2).coca-cola $650 3).cerveza (pack) $2500 4).tabaco $5500 "))
+        catalogo = Number(prompt( "0). Salir 1).Harina $300 2).Coca-Cola $650 3).Cerveza (pack x&) $2500 4).Tabaco $5500 "))
     }
     
-    alert("el total de la compra es de: " + total)
+    alert("El total de la compra es de: " + total)
     console.log(total);
 
     const envio = () => {
-      if (total > 5000 ) {
-        alert("Al ser tu compra mayor a $5.000. el envio es gratuito ")
+      if (total <= 0 ) {
+        alert("Usted no sumo nada al carrito.Por lo cual no hay gastos de envio")
+      }else if (total > 5000){
+        alert("Al ser tu compra mayor a $5.000. El envio es GRATIS!!. ")
       }else {
-        alert("tu compra es inferior a $5.000. por lo tanto se te cobrara un recargo de $500 en la entrega ")
+        alert("Tu compra es inferior a $5.000. Por lo tanto, se te cobrara un recargo de $500 en la entrega. ")
       }
   }
-    const metodo_pago = () => {
-    let Pago_TC_TD = prompt("Ingrese el metodo de pago, Tarjeta de Credito(se le sumara un interes del 21%(TC) o Tarjeta de Debito(se le hara un descuento de 100$(TD))" )
+
+
+  const metodo_pago = () => {
+    let Pago_TC_TD = prompt("Ingrese el metodo de pago, Tarjeta de Credito(se le sumara un interes del 21%(TC) o Tarjeta de Debito(se le hara un descuento de 100$(TD))." )
     if (Pago_TC_TD == "Tarjeta de Credito"||Pago_TC_TD == "TC") {
       total;
       let tc_iva= total + (total *= 0.21)
@@ -62,16 +65,24 @@ if (seleccion == "si"){
     }else if ( Pago_TC_TD == "Tarjeta de Debito"||Pago_TC_TD == "TD") {
       total -= 100
       alert("Tenes un descuento de $100, el total es: " + total)
-      alert("el total de la compra es de: " + total)
+      alert("El total de la compra es de: " + total)
     }
   }
 
-envio()
-metodo_pago()
+  envio()
+
+  if (total >= 100){
+    metodo_pago()
+  }else{
+    alert("Usted no sumo nada al carrito.")
+  }
+
+
+
 
 
 }else seleccion == "no"
-    alert("Gracias por su visita")
+    alert("Gracias por su visita.")
     
 
 
