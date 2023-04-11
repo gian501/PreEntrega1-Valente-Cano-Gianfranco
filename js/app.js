@@ -5,6 +5,9 @@ while(seleccion != "si" && seleccion != "no"){
     seleccion = prompt("Hola, desea realizar una compra?")
 }
 
+const cantidad = (cant, precio) => {
+  return cant * precio
+}
 if (seleccion == "si"){
     alert("Redireccionando al catalogo de productos");
     let catalogo = Number(prompt( "0). Salir 1).harina $300 2).coca-cola $650 3).cerveza (pack) $2500 4).tabaco $5500 "))
@@ -12,9 +15,6 @@ if (seleccion == "si"){
     let total = 0;
     
     
-    const cantidad = (cant, precio) => {
-      return cant * precio
-    }
     
     
     while (catalogo != 0) {
