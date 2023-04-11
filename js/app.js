@@ -10,7 +10,7 @@ const cantidad = (cant, precio) => {
 }
 if (seleccion == "si"){
     alert("Redireccionando al catalogo de productos. Seleccione una opcion (solo en Números)");
-    let catalogo = Number(prompt( "0). Salir 1).Harina $300 2).Coca-cola 2.25L $650 3).Cerveza (pack) $2500 4).Tabaco $5500 "))
+    let catalogo = Number(prompt( "0). Salir 1).Harina $300 2).Coca-cola 2.25L $650 3).Cerveza (pack x 6) $2500 4).Tabaco $5500 "))
     let unidades;
     let total = 0;
     
@@ -38,7 +38,7 @@ if (seleccion == "si"){
             break;
     
       }
-        catalogo = Number(prompt( "0). Salir 1).Harina $300 2).Coca-Cola $650 3).Cerveza (pack x&) $2500 4).Tabaco $5500 "))
+        catalogo = Number(prompt( "0). Salir 1).Harina $300 2).Coca-Cola $650 3).Cerveza (pack x 6) $2500 4).Tabaco $5500 "))
     }
     
     alert("El total de la compra es de: " + total)
@@ -46,7 +46,7 @@ if (seleccion == "si"){
 
     const envio = () => {
       if (total <= 0 ) {
-        alert("Usted no sumo nada al carrito.Por lo cual no hay gastos de envio")
+        alert("Usted no sumo nada al carrito. Por lo cual no hay gastos de envio")
       }else if (total > 5000){
         alert("Al ser tu compra mayor a $5.000. El envio es GRATIS!!. ")
       }else {
